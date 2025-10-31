@@ -2,6 +2,8 @@ using Application.Work.Timing;
 using Domain.Work.Timing;
 using Xunit;
 
+namespace Application.Test;
+
 public sealed class TimingBarCalculatorTests
 {
     [Fact]
@@ -57,9 +59,16 @@ public sealed class TimingBarCalculatorTests
     {
         var t = new TimingInfoHours
         {
-            TimeInit = 3, TimeInitTR = 1, TimeInitSP = 2,
-            TimeWork = 3, TimeWorkWK = 1, TimeWorkTR = 1, TimeWorkSP = 1,
-            TimeEnd = 3, TimeEndTR = 1, TimeEndSP = 2,
+            TimeInit = 3,
+            TimeInitTR = 1,
+            TimeInitSP = 2,
+            TimeWork = 3,
+            TimeWorkWK = 1,
+            TimeWorkTR = 1,
+            TimeWorkSP = 1,
+            TimeEnd = 3,
+            TimeEndTR = 1,
+            TimeEndSP = 2,
             TimeTotalReg = 9
         };
 

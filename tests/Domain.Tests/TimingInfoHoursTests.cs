@@ -1,6 +1,8 @@
 using Domain.Work.Timing;
 using Xunit;
 
+namespace Application.Domain;
+
 public sealed class TimingInfoHoursTests
 {
     [Fact]
