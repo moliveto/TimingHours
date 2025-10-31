@@ -149,6 +149,8 @@ public sealed record TimingInfoHours
   → **Denominador** de escalado horas→px y **bracket grande**.
 
 ---
+![Estructura de TimingInfoHours](doc/timinginfo_estructura.png)
+---
 
 ## 📐 Regla de escalado (horas → píxeles)
 
