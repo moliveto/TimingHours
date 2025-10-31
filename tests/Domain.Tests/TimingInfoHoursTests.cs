@@ -46,9 +46,16 @@ public sealed class TimingInfoHoursTests
     {
         var t = new TimingInfoHours
         {
-            TimeInit = 1, TimeInitTR = 0.5, TimeInitSP = 0.6,
-            TimeWork = 2, TimeWorkWK = 0.5, TimeWorkTR = 0.5, TimeWorkSP = 1.0,
-            TimeEnd = 1, TimeEndTR = 0.2, TimeEndSP = 0.8,
+            TimeInit = 1,
+            TimeInitTR = 0.5,
+            TimeInitSP = 0.6,
+            TimeWork = 2,
+            TimeWorkWK = 0.5,
+            TimeWorkTR = 0.5,
+            TimeWorkSP = 1.0,
+            TimeEnd = 1,
+            TimeEndTR = 0.2,
+            TimeEndSP = 0.8,
             TimeTotalReg = 4
         };
 
@@ -58,8 +65,9 @@ public sealed class TimingInfoHoursTests
     [Fact]
     public void EnsureValid_Throws_On_Negative()
     {
-        var t = TimingInfoHours.CreateAuto(1, -0.1, 2, 1, 0.5, 1, 0.2);
-        var ex = Assert.Throws<TimingValidationException>(() => t.EnsureValid());
-        Assert.Contains("TimeInitTR <0.", ex.Message);
+        var ex = Assert.Throws<TimingValidationException>(() =>
+            TimingInfoHours.CreateAuto(1, -0.1, 2, 1, 0.5, 1, 0.2)
+        );
+        Assert.Contains("TimeInitTR < 0.", ex.Message);
     }
 }
