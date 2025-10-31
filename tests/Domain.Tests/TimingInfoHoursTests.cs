@@ -59,6 +59,7 @@ public sealed class TimingInfoHoursTests
     public void EnsureValid_Throws_On_Negative()
     {
         var t = TimingInfoHours.CreateAuto(1, -0.1, 2, 1, 0.5, 1, 0.2);
-        Assert.Throws<TimingValidationException>(() => t.EnsureValid());
+        var ex = Assert.Throws<TimingValidationException>(() => t.EnsureValid());
+        Assert.Contains("TimeInitTR <0.", ex.Message);
     }
 }
